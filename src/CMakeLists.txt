@@ -9,8 +9,12 @@ foreach(T_FILE_NAME ${EXECUTABLE})
         PRIVATE
         leetcode
         ${CMAKE_THREAD_LIBS_INIT}
-        GTest::GTest
-        GTest::Main
+        #        GTest::GTest
+        gtest
+        gtest_main
+        #        GTest::Main
+#        gmock
+#        gmock_main
     )
-    gtest_discover_tests(${EXECUTABLE_NAME})
+#    gtest_discover_tests(${EXECUTABLE_NAME})
 endforeach()
