@@ -4,6 +4,9 @@ project(LeetCode)
 # See https://cmake.org/cmake/help/git-stage/module/GoogleTest.html
 cmake_minimum_required(VERSION 3.10)
 
+if (POLICY CMP0048)
+    cmake_policy(SET CMP0048 NEW)
+endif()
 
 set(CMAKE_C_COMPILER "C:/MinGW/bin/gcc.exe")
 set(CMAKE_CXX_COMPILER "C:/MinGW/bin/g++.exe")
