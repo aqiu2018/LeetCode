@@ -25,13 +25,18 @@ then
    mkdir cmake-build-debug
 fi
 
-if [ $2 == "all" ]
+if [ "$2" = "all" ]
 then
   echo "clean all"
   cd cmake-build-debug && make clean && cmake ..  && make -j8 && cd src
 else
-  echo "not clean all"
-  cd cmake-build-debug clean && cmake ..  && make $1 -j8 && cd src
+  if [ ! f cmake-build-debug/src/$1 ]
+  then
+    echo "not clean all"
+    cd cmake-build-debug && cmake ..  && make $1 -j8 && cd src
+  else
+    cd cmake-build-debug && make $1 -j8 && cd src
+  fi
 fi
 
 ./$1

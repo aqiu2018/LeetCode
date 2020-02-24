@@ -17,8 +17,7 @@
 class Solution
 {
 public:
-    int isValid(vector<int> &nums)
-    {
+    int isValid(vector<int> &nums) {
         return 1;
     }
 };
