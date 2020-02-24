@@ -1,0 +1,5 @@
+if(EXISTS "/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/leetcode_21_merge_two_sorted_lists[1]_tests.cmake")
+  include("/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/leetcode_21_merge_two_sorted_lists[1]_tests.cmake")
+else()
+  add_test(leetcode_21_merge_two_sorted_lists_NOT_BUILT leetcode_21_merge_two_sorted_lists_NOT_BUILT)
+endif()

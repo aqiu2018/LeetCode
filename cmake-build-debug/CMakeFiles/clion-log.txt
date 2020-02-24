@@ -1,0 +1,32 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode
+-- GTest path: /usr/local/include
+-- leetcode library: ./MyLog.cpp./MyUtil.cpp./btree.cc./listnode.cc
+-- test：test_listnode T_FILE : ./test_listnode.cc
+-- test：test_myLog T_FILE : ./test_myLog.cpp
+-- test：test_tree T_FILE : ./test_tree.cc
+0
+leetcode_102_Binary_Tree_Level_Order_Traversal
+leetcode_107_binary_tree_level_order_traversal_ii
+leetcode_11_ContainerWithMostWater
+leetcode_130_surrounded_regions
+leetcode_169_majority_element
+leetcode_190_reverse_bits
+leetcode_19_Remove_Nth_Node_From_End_of_List
+leetcode_1_two_sum
+leetcode_200_number_of_islands
+leetcode_206_ReverseLinkedList
+leetcode_20_ValidParentheses
+leetcode_215_KthLargestElement
+leetcode_21_merge_two_sorted_lists
+leetcode_2_add_two_num
+leetcode_325_maximum_size_subarray_sum_equals_k
+leetcode_3_longestSubstringWithoutRepeat
+leetcode_454_4sum_ii
+leetcode_4_MedianOfTwoSortArray
+leetcode_50_powx_n
+leetcode_51_n_queens
+leetcode_53_Maximum_Subarray
+leetcode_692_top_k_frequent_words
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug

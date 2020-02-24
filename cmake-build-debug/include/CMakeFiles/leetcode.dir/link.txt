@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libleetcode.a  CMakeFiles/leetcode.dir/MyLog.cpp.o CMakeFiles/leetcode.dir/MyUtil.cpp.o CMakeFiles/leetcode.dir/btree.cc.o CMakeFiles/leetcode.dir/listnode.cc.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libleetcode.a

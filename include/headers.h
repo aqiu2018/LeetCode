@@ -8,10 +8,11 @@
  * @brief    
  * @version  0.0.1
  * 
- * Last Modified:  2019-08-28
+ * Last Modified:  2019-07-23
  * Modified By:    Jiang Yang (pokerpoke@qq.com)
  * 
  */
+
 #ifndef _HEADERS_H_
 #define _HEADERS_H_
 
@@ -40,6 +41,7 @@
 // listnode
 #include "listnode.h"
 #include "btree.h"
+#include "MyLog.h"
 
 using namespace std;
 using namespace LeetCode;

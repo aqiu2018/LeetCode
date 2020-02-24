@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/MyLog.h
+ctime
+-
+iomanip
+-
+iostream
+-
+fstream
+-
+iterator
+-
+map
+-
+stdexcept
+-
+string
+-
+utility
+-
+vector
+-
+
+../include/MyUtil.h
+chrono
+-
+
+/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/test/test_myLog.cpp
+MyLog.h
+/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/test/MyLog.h
+MyUtil.h
+/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/test/MyUtil.h
+iostream
+-
+chrono
+-
+thread
+-
+

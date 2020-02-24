@@ -1,0 +1,5 @@
+if(EXISTS "/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/leetcode_102_Binary_Tree_Level_Order_Traversal[1]_tests.cmake")
+  include("/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/leetcode_102_Binary_Tree_Level_Order_Traversal[1]_tests.cmake")
+else()
+  add_test(leetcode_102_Binary_Tree_Level_Order_Traversal_NOT_BUILT leetcode_102_Binary_Tree_Level_Order_Traversal_NOT_BUILT)
+endif()

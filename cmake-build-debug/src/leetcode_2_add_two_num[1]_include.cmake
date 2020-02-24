@@ -1,0 +1,5 @@
+if(EXISTS "/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/leetcode_2_add_two_num[1]_tests.cmake")
+  include("/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/leetcode_2_add_two_num[1]_tests.cmake")
+else()
+  add_test(leetcode_2_add_two_num_NOT_BUILT leetcode_2_add_two_num_NOT_BUILT)
+endif()
