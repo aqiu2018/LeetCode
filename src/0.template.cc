@@ -1,15 +1,15 @@
 /**
  * 
- * Copyright (c) 2018 NUAA Jiang Yang
+ * Copyright (c) 2018
  * 
  * @file
- * @author   Jiang Yang (pokerpoke@qq.com)
- * @date     2018-11
+ * @author   qzc (1457615966@qq.com)
+ * @date     2019-11
  * @brief    
  * @version  0.0.1
  * 
- * Last Modified:  2019-08-20
- * Modified By:    Jiang Yang (pokerpoke@qq.com)
+ * Last Modified:  2019-11-20
+ * Modified By:    qzc (1457615966@qq.com)
  * 
  */
 #include "headers.h"

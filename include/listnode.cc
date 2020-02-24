@@ -38,6 +38,18 @@ bool is_same_list(ListNode *l1, ListNode *l2)
     return l1 == l2 ? true : false;
 }
 
+void freeMem(ListNode *head)
+{
+    ListNode *del_p = nullptr;
+    while (head != nullptr)
+    {
+        del_p = head->next;
+        delete head;
+        head = del_p;
+    }
+    delete head;
+}
+
 List::List()
 {
     this->head = nullptr;
@@ -68,9 +80,8 @@ void List::insert(int x)
         head = tail = new ListNode(x);
     else
     {
-        ListNode *p = new ListNode(x);
-        tail->next = p;
-        tail = p;
+        tail->next = new ListNode(x);
+        tail = tail->next;
         tail->next = nullptr;
     }
 }

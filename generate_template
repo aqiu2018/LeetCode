@@ -27,7 +27,10 @@ else
     SOLUTION=$1
 fi
 
+echo "solution: "${SOLUTION}
+echo "solution: ${CMAKE_SOURCE_DIR}/src/${SOLUTION}.cc"
+
 cp -f ${CMAKE_SOURCE_DIR}/src/0.template.cc ${CMAKE_SOURCE_DIR}/src/${SOLUTION}.cc
 
-sed -i "s/isValid/`expr ${SOLUTION}`/g" \
+sed -i "" "s/isValid/`expr ${SOLUTION}`/g" \
  ${CMAKE_SOURCE_DIR}/src/${SOLUTION}.cc
