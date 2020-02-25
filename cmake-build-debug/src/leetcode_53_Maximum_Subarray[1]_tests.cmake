@@ -1,5 +1,0 @@
-add_test( leetcode_53_Maximum_Subarray.leetcode_53_Maximum_Subarray_1 /Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/leetcode_53_Maximum_Subarray [==[--gtest_filter=leetcode_53_Maximum_Subarray.leetcode_53_Maximum_Subarray_1]==] --gtest_also_run_disabled_tests)
-set_tests_properties( leetcode_53_Maximum_Subarray.leetcode_53_Maximum_Subarray_1 PROPERTIES WORKING_DIRECTORY /Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src)
-add_test( leetcode_53_Maximum_Subarray.leetcode_53_Maximum_Subarray_2 /Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/leetcode_53_Maximum_Subarray [==[--gtest_filter=leetcode_53_Maximum_Subarray.leetcode_53_Maximum_Subarray_2]==] --gtest_also_run_disabled_tests)
-set_tests_properties( leetcode_53_Maximum_Subarray.leetcode_53_Maximum_Subarray_2 PROPERTIES WORKING_DIRECTORY /Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src)
-set( leetcode_53_Maximum_Subarray_TESTS leetcode_53_Maximum_Subarray.leetcode_53_Maximum_Subarray_1 leetcode_53_Maximum_Subarray.leetcode_53_Maximum_Subarray_2)

@@ -1,5 +1,0 @@
-if(EXISTS "/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/leetcode_692_top_k_frequent_words[1]_tests.cmake")
-  include("/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/leetcode_692_top_k_frequent_words[1]_tests.cmake")
-else()
-  add_test(leetcode_692_top_k_frequent_words_NOT_BUILT leetcode_692_top_k_frequent_words_NOT_BUILT)
-endif()

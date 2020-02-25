@@ -1,5 +1,0 @@
-if(EXISTS "/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/leetcode_53_Maximum_Subarray[1]_tests.cmake")
-  include("/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/leetcode_53_Maximum_Subarray[1]_tests.cmake")
-else()
-  add_test(leetcode_53_Maximum_Subarray_NOT_BUILT leetcode_53_Maximum_Subarray_NOT_BUILT)
-endif()

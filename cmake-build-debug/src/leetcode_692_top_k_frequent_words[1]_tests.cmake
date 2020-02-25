@@ -1,3 +1,0 @@
-add_test( leetcode_692_top_k_frequent_words.leetcode_692_top_k_frequent_words_1 /Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/leetcode_692_top_k_frequent_words [==[--gtest_filter=leetcode_692_top_k_frequent_words.leetcode_692_top_k_frequent_words_1]==] --gtest_also_run_disabled_tests)
-set_tests_properties( leetcode_692_top_k_frequent_words.leetcode_692_top_k_frequent_words_1 PROPERTIES WORKING_DIRECTORY /Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src)
-set( leetcode_692_top_k_frequent_words_TESTS leetcode_692_top_k_frequent_words.leetcode_692_top_k_frequent_words_1)

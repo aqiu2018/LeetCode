@@ -1,5 +1,0 @@
-if(EXISTS "/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/0[1]_tests.cmake")
-  include("/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/0[1]_tests.cmake")
-else()
-  add_test(0_NOT_BUILT 0_NOT_BUILT)
-endif()

@@ -1,5 +1,0 @@
-if(EXISTS "/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/leetcode_19_Remove_Nth_Node_From_End_of_List[1]_tests.cmake")
-  include("/Users/aqiu/Documents/1_study/10_workspace/02_clion/LeetCode/cmake-build-debug/src/leetcode_19_Remove_Nth_Node_From_End_of_List[1]_tests.cmake")
-else()
-  add_test(leetcode_19_Remove_Nth_Node_From_End_of_List_NOT_BUILT leetcode_19_Remove_Nth_Node_From_End_of_List_NOT_BUILT)
-endif()
