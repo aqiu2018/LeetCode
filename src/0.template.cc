@@ -25,9 +25,10 @@ public:
 TEST(isValid, isValid_1)
 {
     Solution s;
-    vector<int> in = {1, 2, 3};
+    vector<int> in1 = {1, 2, 3};
+    vector<vector<int>> in2 = {{1,2,3},{2,3,4}};
     int ans = 1;
-    EXPECT_EQ(s.isValid(in), ans);
+    EXPECT_EQ(s.isValid(in1), ans);
 }
 
 int main(int argc, char **argv)
