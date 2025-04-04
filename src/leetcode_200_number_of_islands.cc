@@ -72,7 +72,7 @@ public:
         return ret;
     }
 
-    int leetcode_200_number_of_islands(vector<vector<char>>& grid)
+    int leetcode_200_number_of_islands1(vector<vector<char>>& grid)
     {
 
         m_row = grid.size();
@@ -101,7 +101,54 @@ public:
     int m_col = 0;
     int m_row = 0;
     int m_count = 0;
+
+
+
+    vector<vector<int>> m_index = {{-1,0}, {0,-1}, {0,1},{1,0}};
+    bool dfs(vector<vector<char>>& grid, vector<vector<bool>>& visited, int i, int j) {
+        if (i < 0 || j < 0 || i >= m_row || j >= m_col || visited[i][j]) return false;
+        visited[i][j] = true;
+        if (grid[i][j] == '0') return false;
+
+        for (auto p : m_index) {
+            cout << "i j " << i << "  "<< j  << " " << i+p[0] << " " << j+p[1]<< endl;
+            dfs(grid, visited, i+p[0], j+p[1]);
+        }
+
+        return true;
+    }
+    int leetcode_200_number_of_islands(vector<vector<char>>& grid) {
+        m_row = grid.size();
+        m_col = m_row == 0 ? 0 : grid[0].size();
+        if (m_col == 0) return 0;
+
+        int ans = 0;
+        vector<vector<bool>> visited(m_row, vector<bool>(m_col, false));
+        for (int i = 0; i < m_row; i++) {
+            for (int j = 0; j < m_col; j++) {
+                if (dfs(grid, visited, i, j)) {
+                    cout << "orighin i j " << i << "  "<< j << endl;
+                    ans++;
+                }
+            }
+        }
+
+        return ans;
+    }
 };
+TEST(leetcode_200_number_of_islands, leetcode_200_number_of_islands_4)
+{
+    Solution s;
+    vector<vector<char>> in;
+    in.push_back(vector<char>({'1', '1', '1', '1', '1'}));
+    in.push_back(vector<char>({'1', '1', '0', '0', '1'}));
+    in.push_back(vector<char>({'1', '0', '1', '0', '1'}));
+    in.push_back(vector<char>({'1', '0', '0', '0', '1'}));
+    in.push_back(vector<char>({'1', '0', '0', '0', '1'}));
+    in.push_back(vector<char>({'1', '1', '1', '1', '1'}));
+    int ans = 3;
+    EXPECT_EQ(s.leetcode_200_number_of_islands(in), ans);
+}
 
 TEST(leetcode_200_number_of_islands, leetcode_200_number_of_islands_1)
 {

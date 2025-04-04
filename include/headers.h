@@ -45,5 +45,6 @@
 
 using namespace std;
 using namespace LeetCode;
+using namespace MyLog;
 
 #endif // !_HEADERS_H_

@@ -23,18 +23,38 @@ class Solution
 public:
     int leetecode_42_trapping_rain_water(vector<int>& height) {
 
+        int ans = 0;
         stack<int> st;
-        int l = 0, res = 0, r = height.size();
-        while(l < r){
-            if(st.empty() || height[l] <= height[st.top()]){
-                st.push(l++);
-            }else{
-                int t = st.top();st.pop();
+        int l = 0, r = height.size();
+        while(l<r){
+            if(st.empty() || height[l] < height[st.top()]) st.push(l++);
+            else{
+                int minValue = height[st.top()];
+                st.pop();
                 if(st.empty()) continue;
-                res += (min(height[l], height[st.top()]) - height[t]) * (l-st.top() - 1);
+                ans += (min(height[l], height[st.top()]) - minValue) * (l-st.top()-1);
             }
         }
-        return res;
+
+
+
+
+
+```
+
+
+//        stack<int> st;
+//        int l = 0, res = 0, r = height.size();
+//        while(l < r){
+//            if(st.empty() || height[l] <= height[st.top()]){
+//                st.push(l++);
+//            }else{
+//                int t = st.top();st.pop();
+//                if(st.empty()) continue;
+//                res += (min(height[l], height[st.top()]) - height[t]) * (l-st.top() - 1);
+//            }
+//        }
+//        return res;
 
         int ans = 0;
         stack<int> s_height;

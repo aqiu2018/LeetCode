@@ -1,9 +1,11 @@
 /**
  * 
-给定一个二叉树，返回其按层次遍历的节点值。 （即逐层地，从左到右访问所有节点）。
+给你一个二叉树，请你返回其按 层序遍历 得到的节点值。 （即逐层地，从左到右访问所有节点）。
 
-例如:
-给定二叉树: [3,9,20,null,null,15,7],
+ 
+
+示例：
+二叉树：[3,9,20,null,null,15,7],
 
     3
    / \
@@ -25,55 +27,53 @@
  */
 #include "headers.h"
 
-
-
 class Solution
 {
 public:
-//    struct TreeNode {
-//        int val;
-//        TreeNode *left;
-//        TreeNode *right;
-//        TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-//    };
+    void levelOrder(TreeNode* root, int level, vector<vector<int>>& ans) {
+        if (!root) return;
 
-    vector<vector<int>> leetcode_102_Binary_Tree_Level_Order_Traversal(TreeNode* root)
-    {
-        vector<vector<int>> rst;
-        vector<int> layerRst;
-        if(root == nullptr) return rst;
+        if(ans.size() == level) ans.push_back(vector<int>{});
+        ans[level].push_back(root->val);
+        if (root->left) levelOrder(root->left, level + 1, ans);
+        if (root->right) levelOrder(root->right, level + 1, ans);
+    }
+    vector<vector<int>> leetcode_102_binary_tree_level_order_traversal(TreeNode* root) {
 
-        queue<TreeNode *> stackMember;
-        stackMember.push(root);
+        vector<vector<int>> ans;
+        levelOrder(root, 0, ans);
+        return ans;
 
-        while(!stackMember.empty()){
-            int layerSize = stackMember.size();
-            for (int i = 0; i < layerSize; ++i) {
+        if (!root) return ans;
 
-                layerRst.push_back(stackMember.front()->val);
-
-                if (stackMember.front()->left != nullptr){
-                    stackMember.push(stackMember.front()->left);
+        queue<TreeNode*> q{{root}};
+        while (!q.empty()) {
+            int size = q.size();
+            vector<int> tmp;
+            for (int i = 0; i < size; ++i) {
+                TreeNode* t = q.front(); q.pop();
+                if (t) {
+                    q.push(t->left);
+                    q.push(t->right);
+                    tmp.push_back(t->val);
                 }
-                if (stackMember.front()->right != nullptr){
-                    stackMember.push(stackMember.front()->right);
-                }
-                stackMember.pop();
             }
-            rst.push_back(layerRst);
-            layerRst.clear();
+            if (tmp.size() > 0) ans.push_back(tmp);
         }
-
-        return rst;
+        return ans;
     }
 };
 
-TEST(leetcode_102_Binary_Tree_Level_Order_Traversal, leetcode_102_Binary_Tree_Level_Order_Traversal_1)
+TEST(leetcode_102_binary_tree_level_order_traversal, leetcode_102_binary_tree_level_order_traversal_1)
 {
     Solution s;
-    vector<int> in = {1, 2, 3};
-    int ans = 1;
-//    EXPECT_EQ(s.leetcode_102_Binary_Tree_Level_Order_Traversal(in), ans);
+    Tree in1{3,9,20,NULL,NULL,15,7};
+    vector<vector<int>> ans = {
+            {3},
+            {9,20},
+            {15,7}
+    };
+    EXPECT_EQ(s.leetcode_102_binary_tree_level_order_traversal(in1.root), ans);
 }
 
 int main(int argc, char **argv)

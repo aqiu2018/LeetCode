@@ -1,15 +1,27 @@
 /**
  * 
- * Copyright (c) 2018
- * 
- * @file
- * @author   qzc (1457615966@qq.com)
- * @date     2019-11
- * @brief    
- * @version  0.0.1
- * 
- * Last Modified:  2019-11-20
- * Modified By:    qzc (1457615966@qq.com)
+给定一个整数数组 nums，将该数组升序排列。
+
+ 
+
+示例 1：
+
+输入：[5,2,3,1]
+输出：[1,2,3,5]
+示例 2：
+
+输入：[5,1,1,2,0,0]
+输出：[0,0,1,1,2,5]
+ 
+
+提示：
+
+1 <= A.length <= 10000
+-50000 <= A[i] <= 50000
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/sort-an-array
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * 
  */
 #include "headers.h"
@@ -17,32 +29,29 @@
 class Solution
 {
 public:
-    int Partition(vector<int>& nums, int left, int right) {
-        int pivot = nums[right];
-        int low = left;
-        for(int i = low; i < right;i++){
-            if(nums[i] < pivot){
-                swap(nums[i], nums[low]);
-                low++;
-            }
+    int partition(vector<int>& nums, int l, int r){
+        int low = l;
+        for (int i = l; i < r; i++) {
+            if(nums[i] < nums[r]) swap(nums[i], nums[low++]);
         }
-        swap(nums[low], nums[right]);
+
+        swap(nums[low], nums[r]);
 
         return low;
     }
-
-    void QuickSort(vector<int>& nums, int left, int right) {
-        if(left < right){
-            int pivot = Partition(nums, left, right);
-            QuickSort(nums, left, pivot-1);
-            QuickSort(nums, pivot+1, right);
+    void QuickSort(vector<int>& nums, int l, int r){
+        if(l<r) {
+            int mid = partition(nums, l, r);
+            QuickSort(nums, l, mid-1);
+            QuickSort(nums, mid+1, r);
         }
     }
+
 
     void Merge(vector<int>& nums, int left, int pivot, int right) {
         int n = right - left + 1; //储存元素总个数
         vector<int> tmp(n);
-        int i = 0, l = left, r = pivot+1;
+        int i = 0, l = left, r = pivot + 1;
 
         while(l <= pivot && r <= right){
             tmp[i++] = nums[l] <= nums[r] ? nums[l++] : nums[r++];
@@ -70,10 +79,9 @@ public:
         }
     }
 
+
     vector<int> leetcode_912_sort_an_array(vector<int>& nums) {
         QuickSort(nums, 0, nums.size()-1);
-//        MergeSort(nums, 0, nums.size()-1 );
-
         return nums;
     }
 };
@@ -81,9 +89,10 @@ public:
 TEST(leetcode_912_sort_an_array, leetcode_912_sort_an_array_1)
 {
     Solution s;
-    vector<int> in = {5, 1, 2, 3};
-    vector<int> ans = {1, 2, 3, 5};
-    EXPECT_EQ(s.leetcode_912_sort_an_array(in), ans);
+    vector<int> in1 = {1, 4, 2, 3};
+    vector<vector<int>> in2 = {{1,2,3},{2,3,4}};
+    vector<int> ans = {1, 2, 3, 4};
+    EXPECT_EQ(s.leetcode_912_sort_an_array(in1), ans);
 }
 
 int main(int argc, char **argv)
