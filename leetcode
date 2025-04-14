@@ -1,21 +1,25 @@
 #!/bin/bash
 ################################################################################
-# 
+#
 # Copyright (c) 2019 NUAA AeroLab
-# 
+#
 # @author   Jiang Yang (pokerpoke@qq.com)
 # @date     2018-08
-# @brief    
+# @brief
 # @version  0.0.1
-# 
+#
 # Last Modified:  2019-05-21
 # Modified By:    Jiang Yang (pokerpoke@qq.com)
-# 
+#
 ################################################################################
 set -e
 
 # get scripts directory
-CMAKE_SOURCE_DIR=$(dirname $(readlink -f $0))
+if [ "$(uname -s)" = 'Linux' ]; then
+  CMAKE_SOURCE_DIR=$(dirname $(readlink -f $0))
+else
+  CMAKE_SOURCE_DIR=$(dirname $(greadlink -f $0))
+fi
 # update cmake source path
 CMAKE_SOURCE_DIR=$(pwd)
 cd ${CMAKE_SOURCE_DIR}
@@ -30,7 +34,7 @@ then
   echo "clean all"
   cd cmake-build-debug && make clean && cmake ..  && make -j8 && cd src
 else
-  if [ ! f cmake-build-debug/src/$1 ]
+  if [ ! -f "cmake-build-debug/src/$1" ]
   then
     echo "not clean all"
     cd cmake-build-debug && cmake ..  && make $1 -j8 && cd src
